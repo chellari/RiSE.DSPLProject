@@ -88,6 +88,7 @@ void input::load(ifstream& inputFile) {
 
 			H.resize(dimention_, vector<int> (dimention_));
 			M.resize(dimention_, vector<int> (dimention_));
+			OPT.resize(dimention_);
 
             //FEATURE_MODEL_SECTION
             getline(inputFile,s,' ');
@@ -120,6 +121,19 @@ void input::load(ifstream& inputFile) {
 				M[x][y] = 1;	
 			}
 
+			//OPTIONAL_SECTION
+            getline(inputFile,s,' ');
+			if(s[s.size()-1] != ':')
+                getline(inputFile,s,' ');
+			getline(inputFile,s);
+			OPT_size = convert(s);
+			cout<<"OPTIONAL_SECTION : "<<OPT_size<<endl;
+			
+			for (int i = 0; i < OPT_size; i++) {
+				inputFile >> id >> x;
+				cout << id <<" "<<x<<endl;
+				OPT[x] = 1;	
+			}
 
             //EOF
             getline(inputFile,s);

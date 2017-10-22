@@ -59,6 +59,11 @@ public:
 	vector< vector<int> > M;
 	int M_size;
 
+	// Optional relation
+	vector< int > OPT;
+	int OPT_size;
+
+
 	int convert(string s);
 
 };

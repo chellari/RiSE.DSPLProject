@@ -59,16 +59,6 @@ main(int   argc,
 		}
 	}
 	
-	// OR constraints
-	for (int i = 0; i < entrada.dimention_; i++){
-		for (int j = i+1; j < entrada.dimention_; j++){
-			if(entrada.M[i][j] == 1){
-				string constraintName = "x[" + to_string (j)+"]==x["+ to_string (j)+"]";
-				model.addConstr(x[j] == x[i], constraintName);
-			}
-		}
-	}
-	
     model.setObjective(1.3*x[2] - 0.42*x[4] + 0*x[8]+ 1.53*x[9] + 0.93*x[10] 
     + 0*x[11] + 1.34*x[13] + 0.01*x[14] -0.16*x[15]+1.93*x[16]+0.6*x[17], GRB_MAXIMIZE);
 
