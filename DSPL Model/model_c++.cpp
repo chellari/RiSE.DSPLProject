@@ -1,4 +1,4 @@
-/* Copyright 2017, Gurobi Optimization, Inc. */
+/* Copyright 2017, Federal University of Bahia. */
 
 /* This example formulates and solves the following simple MIP model:
 
